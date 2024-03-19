@@ -4,9 +4,11 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {AppController} from './app.controller';
 import {AppService} from './app.service';
 import config from './config';
+import { UserModule } from 'src/user/user.module';
 
 @Module({
   imports: [
+    UserModule,
     ConfigModule.forRoot({
       isGlobal: true,
       load: [config],
@@ -21,7 +23,7 @@ import config from './config';
         password: configService.get<string>('postgresPassword'),
         database: configService.get<string>('postgresDatabase'),
         autoLoadEntities: true,
-        synchronize: false,
+        synchronize: true,
       }),
     }),
   ],
