@@ -1,9 +1,8 @@
-import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm'
+import {Column, PrimaryGeneratedColumn} from 'typeorm'
 
-@Entity()
-export class User {
+export abstract class User {
   @PrimaryGeneratedColumn()
-  userId: number;
+  id: number;
 
   @Column({
     type: 'varchar',
@@ -53,15 +52,11 @@ export class User {
   avatar: string;
 
   @Column({
-    type: 'text',
+    type: 'varchar',
     nullable: true
   })
   description: string;
 
   @Column({nullable: true})
   github: string;
-
-  @Column({nullable: true})
-  projectIds: number;
-
 }
