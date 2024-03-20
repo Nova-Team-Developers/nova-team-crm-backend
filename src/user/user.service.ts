@@ -8,12 +8,14 @@ import { Student } from './entity/student.entity';
 export class UserService {
   constructor(@InjectRepository(Student) private userRepository: Repository<Student>) {}
 
-  async findAll() {
-    return await this.userRepository.find()
-  }
-
   async createUser(createUserDto: CreateUserDto) {
     const newUser =  this.userRepository.create(createUserDto)
     return await this.userRepository.save(newUser)
   }
+
+  async getByEmail(email: string) {
+    return await this.userRepository.findOne({where: { email }})
+  }
+
+  
 }

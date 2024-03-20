@@ -1,9 +1,5 @@
-import {Column, Entity} from 'typeorm'
-import { User } from './abstractuser.entity';
+import {Entity} from 'typeorm'
+import { Student } from './student.entity';
 
 @Entity()
-export class Mentor extends User {
-
-  @Column({nullable: true})
-  projectIds: number;
-}
+export class Mentor extends Student {}

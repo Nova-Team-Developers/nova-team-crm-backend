@@ -11,7 +11,7 @@ export abstract class User {
   email: string;
 
   @Column('varchar')
-  password: string;
+  passwordHash: string;
 
   @Column('varchar')
   firstName: string;
