@@ -1,9 +1,10 @@
-import {Column, Entity} from 'typeorm'
+import { Entity, OneToMany} from 'typeorm'
 import { User } from './abstractuser.entity';
+import { Mentor } from './mentor.entity';
 
 @Entity()
 export class Manager extends User {
 
-  @Column({nullable: true})
-  mentors: number[]; // one-to-many
+  @OneToMany(() => Mentor, mentor => mentor.manager)
+  mentors: Mentor[];
 }
