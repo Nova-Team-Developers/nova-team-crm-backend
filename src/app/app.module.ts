@@ -4,9 +4,11 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {AppController} from './app.controller';
 import {AppService} from './app.service';
 import config from './config';
+import { UserModule } from 'src/user/user.module';
 
 @Module({
   imports: [
+    UserModule,
     ConfigModule.forRoot({
       isGlobal: true,
       load: [config],
