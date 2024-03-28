@@ -1,4 +1,4 @@
-import {Column, PrimaryGeneratedColumn} from 'typeorm'
+import {Column, PrimaryGeneratedColumn} from 'typeorm';
 
 export abstract class User {
   @PrimaryGeneratedColumn()
@@ -6,7 +6,7 @@ export abstract class User {
 
   @Column({
     type: 'varchar',
-    unique: true
+    unique: true,
   })
   email: string;
 
@@ -18,7 +18,7 @@ export abstract class User {
 
   @Column({
     type: 'varchar',
-    nullable: true
+    nullable: true,
   })
   lastName: string;
 
@@ -27,33 +27,33 @@ export abstract class User {
 
   @Column({
     type: 'date',
-    nullable: true
+    nullable: true,
   })
   birthdayDate: Date;
 
   @Column({
     type: 'varchar',
     unique: true,
-    nullable: true
+    nullable: true,
   })
   mobilePhone: string;
 
   @Column({
     type: 'varchar',
     nullable: true,
-    unique: true
+    unique: true,
   })
   discord: string;
 
   @Column({
     type: 'varchar',
-    nullable: true
+    nullable: true,
   })
   avatar: string;
 
   @Column({
     type: 'varchar',
-    nullable: true
+    nullable: true,
   })
   description: string;
 
