@@ -1,6 +1,6 @@
-import { Body, Controller, Get, Post, UsePipes, ValidationPipe } from '@nestjs/common';
-import { UserService } from './user.service';
-import { CreateStudentDto } from './dto/user.dto';
+import {Body, Controller, Get, Post, UsePipes, ValidationPipe} from '@nestjs/common';
+import {CreateStudentDto} from './dto/user.dto';
+import {UserService} from './user.service';
 
 @Controller('user')
 export class UserController {
@@ -8,12 +8,12 @@ export class UserController {
 
   @UsePipes(ValidationPipe)
   @Post('create')
-  async create(@Body() CreateStudentDto: CreateStudentDto) {
-    return await this.userService.createUser(CreateStudentDto)
+  async create(@Body() сreateStudentDto: CreateStudentDto) {
+    return await this.userService.createUser(сreateStudentDto);
   }
 
   @Get()
   async findAll() {
-    return await this.userService.findAll()
+    return await this.userService.findAll();
   }
 }
